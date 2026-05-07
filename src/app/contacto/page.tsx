@@ -17,10 +17,10 @@ export default function ContactoPage() {
               Audiolibros, puedes escribir a:
             </p>
             <a
-              href="mailto:contacto@nextfaro.com"
+              href="mailto:nextfaroproject@gmail.com"
               className="mt-5 inline-block text-lg font-semibold text-[#d6b15f] transition hover:text-[#fff7e8]"
             >
-              contacto@nextfaro.com
+              nextfaroproject@gmail.com
             </a>
           </div>
         </div>
