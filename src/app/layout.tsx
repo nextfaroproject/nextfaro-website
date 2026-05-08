@@ -23,6 +23,12 @@ export default function RootLayout({
       <body className="min-h-full">
         {children}
         <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9244003532654006"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4SCZ07HLCH"
           strategy="afterInteractive"
         />
