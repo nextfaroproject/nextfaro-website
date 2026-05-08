@@ -5,36 +5,21 @@ import { SiteFooter } from "@/components/site-footer";
 const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
 const fallbackBookImage = "/brand/nextfaro-logo.png";
 
-const pillars = [
-  {
-    title: "Aprende",
-    description: "Descubre ideas útiles de grandes libros.",
-  },
-  {
-    title: "Escucha",
-    description: "Contenido práctico para acompañar tu día.",
-  },
-  {
-    title: "Aplica",
-    description: "Convierte conocimiento en acción.",
-  },
-];
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#070706] text-[#fff7e8]">
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative overflow-hidden bg-[#070706]">
         <Image
-          src="/brand/nextfaro-library-main.png"
+          src="/brand/nextfaro-hero-clean.png"
           alt="Biblioteca elegante de NextFaro Audiolibros"
           fill
           priority
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#070706]/45" />
-        <div className="absolute inset-0 bg-linear-to-r from-[#070706]/90 via-[#070706]/46 to-[#070706]/18" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-[#070706] to-transparent" />
+        <div className="absolute inset-0 bg-[#070706]/20" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#070706]/94 via-[#070706]/60 to-[#070706]/8" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-[#070706] to-transparent" />
 
         <header className="relative z-10 mx-auto w-full max-w-7xl px-5 py-5 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between gap-4">
@@ -96,15 +81,15 @@ export default function Home() {
           </nav>
         </header>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-96px)] w-full max-w-7xl items-start px-5 pb-20 pt-14 sm:px-8 sm:pb-24 sm:pt-20 lg:px-10 lg:pt-24">
-          <div className="max-w-2xl">
+        <div className="relative z-10 mx-auto flex min-h-[430px] w-full max-w-7xl items-start px-5 pb-16 pt-10 sm:min-h-[420px] sm:px-8 sm:pt-14 lg:min-h-[460px] lg:px-10 lg:pt-16">
+          <div className="max-w-xl">
             <p className="mb-5 w-fit border-l-2 border-[#e9c46a] bg-[#070706]/38 px-4 py-2 text-sm font-medium text-[#f2d991] backdrop-blur">
               Libros seleccionados para aprender mejor
             </p>
-            <h1 className="font-serif text-4xl font-semibold leading-[1.04] text-[#fff7e8] sm:text-6xl lg:text-7xl">
+            <h1 className="font-serif text-4xl font-semibold leading-[1.04] text-[#fff7e8] drop-shadow-[0_2px_18px_rgba(0,0,0,0.38)] sm:text-5xl lg:text-6xl">
               Conocimiento que te acompaña.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#fff7e8]/82">
+            <p className="mt-5 max-w-md text-base leading-7 text-[#fff7e8]/84 sm:text-lg">
               Una selección de libros físicos para crecer, aprender y descubrir
               nuevas ideas.
             </p>
@@ -124,22 +109,6 @@ export default function Home() {
               >
                 Visitar YouTube
               </a>
-            </div>
-
-            <div className="mt-12 grid max-w-3xl gap-4 sm:mt-14 sm:grid-cols-3">
-              {pillars.map((pillar) => (
-                <div
-                  key={pillar.title}
-                  className="border-l border-[#e9c46a]/42 bg-[#070706]/24 py-2 pl-4 pr-3 backdrop-blur"
-                >
-                  <p className="font-serif text-lg leading-tight text-[#fff7e8]">
-                    {pillar.title}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-[#fff7e8]/66">
-                    {pillar.description}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
