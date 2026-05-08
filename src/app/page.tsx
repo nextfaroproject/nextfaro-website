@@ -188,6 +188,12 @@ export default function Home() {
             Algunos enlaces pueden ser de afiliado. Si compras a través de
             ellos, puedo recibir una comisión sin costo adicional para ti.
           </p>
+
+          <div className="mx-auto mt-8 flex min-h-24 max-w-3xl items-center justify-center rounded-lg border border-[#e9c46a]/14 bg-[#fff7e8]/[0.02] px-5 py-6 text-center shadow-[0_12px_34px_rgba(0,0,0,0.14)]">
+            <p className="text-xs font-semibold tracking-[0.18em] text-[#d6b15f]/70">
+              Espacio publicitario
+            </p>
+          </div>
         </div>
       </section>
 
