@@ -12,10 +12,20 @@ export const metadata: Metadata = {
     "Articulos sobre lectura, libros fisicos, aprendizaje, finanzas personales y desarrollo personal.",
 };
 
+function AdPlaceholder() {
+  return (
+    <div className="flex min-h-28 w-full items-center justify-center rounded-lg border border-[#b88a2d]/22 bg-[#f1e4cd] px-5 py-6 text-center shadow-[0_12px_34px_rgba(67,44,12,0.06)]">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a641d]/70">
+        Espacio publicitario
+      </p>
+    </div>
+  );
+}
+
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-[#070706] text-[#fff7e8]">
-      <header className="border-b border-[#e9c46a]/14 bg-[#070706]/95 px-5 py-5 sm:px-8 lg:px-10">
+    <main className="min-h-screen bg-[#f6efe2] text-[#17130d]">
+      <header className="border-b border-[#b88a2d]/18 bg-[#fffaf1]/95 px-5 py-5 sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <Link
             href="/"
@@ -30,23 +40,23 @@ export default function BlogPage() {
               priority
               className="h-10 w-10 shrink-0 object-contain"
             />
-            <span className="truncate text-sm font-semibold text-[#fff7e8] sm:text-base">
+            <span className="truncate text-sm font-semibold text-[#17130d] sm:text-base">
               NextFaro Audiolibros
             </span>
           </Link>
 
-          <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#fff7e8]/76">
-            <Link className="transition hover:text-[#e9c46a]" href="/">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#4b4030]">
+            <Link className="transition hover:text-[#a77518]" href="/">
               Inicio
             </Link>
-            <Link className="transition hover:text-[#e9c46a]" href="/#catalogo">
+            <Link className="transition hover:text-[#a77518]" href="/#catalogo">
               Catalogo
             </Link>
-            <Link className="text-[#e9c46a]" href="/blog">
+            <Link className="font-semibold text-[#9a6a12]" href="/blog">
               Blog
             </Link>
             <a
-              className="transition hover:text-[#e9c46a]"
+              className="transition hover:text-[#a77518]"
               href={youtubeUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -57,18 +67,22 @@ export default function BlogPage() {
         </div>
       </header>
 
-      <section className="border-b border-[#e9c46a]/14 bg-[#0c0c0a] px-5 py-12 sm:px-8 sm:py-14 lg:px-10">
+      <section className="border-b border-[#b88a2d]/18 bg-[#fffaf1] px-5 py-12 sm:px-8 sm:py-14 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-4 w-fit border-l-2 border-[#e9c46a] bg-[#fff7e8]/[0.035] px-4 py-2 text-sm font-medium text-[#f2d991]">
+          <p className="mb-4 w-fit border-l-2 border-[#b88a2d] bg-[#f0dfbd]/55 px-4 py-2 text-sm font-medium text-[#7a5313]">
             Lectura, aprendizaje y libros recomendados
           </p>
-          <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight text-[#fff7e8] sm:text-5xl">
+          <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight text-[#17130d] sm:text-5xl">
             Blog de NextFaro
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-[#fff7e8]/68 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-[#514636] sm:text-lg">
             Guias y articulos originales para leer mejor, elegir buenos libros
             y convertir el conocimiento en una practica diaria.
           </p>
+
+          <div className="mt-8">
+            <AdPlaceholder />
+          </div>
         </div>
       </section>
 
@@ -77,11 +91,11 @@ export default function BlogPage() {
           {blogArticles.map((article) => (
             <article
               key={article.slug}
-              className="group flex h-full flex-col overflow-hidden rounded-lg border border-[#d6b15f]/12 bg-[#fff7e8]/[0.025] shadow-[0_12px_36px_rgba(0,0,0,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d6b15f]/42 hover:bg-[#fff7e8]/[0.045] hover:shadow-[0_18px_48px_rgba(0,0,0,0.24)]"
+              className="group flex h-full flex-col overflow-hidden rounded-lg border border-[#c9a95b]/24 bg-[#fffaf1] shadow-[0_14px_36px_rgba(55,39,18,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[#b88a2d]/48 hover:shadow-[0_20px_50px_rgba(55,39,18,0.14)]"
             >
               <Link
                 href={`/blog/${article.slug}`}
-                className="relative block aspect-[16/10] overflow-hidden bg-[#11100d]"
+                className="relative block aspect-[16/10] overflow-hidden bg-[#e9dcc6]"
                 aria-label={`Leer artículo: ${article.title}`}
               >
                 <Image
@@ -91,29 +105,33 @@ export default function BlogPage() {
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#070706]/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#17130d]/24 to-transparent" />
               </Link>
 
               <div className="flex flex-1 flex-col p-5">
-                <div className="flex items-center justify-between gap-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#d6b15f]/78">
+                <div className="flex items-center justify-between gap-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a6a12]">
                   <span>{article.category}</span>
                   <span>{article.readingTime}</span>
                 </div>
-                <h2 className="mt-3 font-serif text-xl leading-tight text-[#fff7e8]">
+                <h2 className="mt-3 font-serif text-xl leading-tight text-[#17130d]">
                   {article.title}
                 </h2>
-                <p className="mt-3 line-clamp-3 flex-1 text-sm leading-6 text-[#fff7e8]/62">
+                <p className="mt-3 line-clamp-3 flex-1 text-sm leading-6 text-[#5b5142]">
                   {article.description}
                 </p>
                 <Link
                   href={`/blog/${article.slug}`}
-                  className="mt-5 w-fit rounded-full border border-[#d6b15f]/70 bg-[#d6b15f] px-4 py-2 text-xs font-bold text-[#11100d] transition-all duration-300 hover:bg-transparent hover:text-[#f0d27a]"
+                  className="mt-5 w-fit rounded-full border border-[#b88a2d]/70 bg-[#b88a2d] px-4 py-2 text-xs font-bold text-[#fffaf1] transition-all duration-300 hover:bg-transparent hover:text-[#8a5d12]"
                 >
                   Leer artículo
                 </Link>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mx-auto mt-10 max-w-7xl">
+          <AdPlaceholder />
         </div>
       </section>
 
