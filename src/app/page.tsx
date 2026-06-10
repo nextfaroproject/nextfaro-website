@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { books } from "@/data/books";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -45,6 +46,9 @@ export default function Home() {
               <a className="transition hover:text-[#e9c46a]" href="#catalogo">
                 Catálogo
               </a>
+              <Link className="transition hover:text-[#e9c46a]" href="/blog">
+                Blog
+              </Link>
               <a
                 className="transition hover:text-[#e9c46a]"
                 href={youtubeUrl}
@@ -70,6 +74,12 @@ export default function Home() {
             >
               Catálogo
             </a>
+            <Link
+              className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
+              href="/blog"
+            >
+              Blog
+            </Link>
             <a
               className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
               href={youtubeUrl}

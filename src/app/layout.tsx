@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nextfaroaudiolibros.com"),
   title: "NextFaro Audiolibros",
   description:
     "Biblioteca de libros físicos recomendados para aprender, crecer y descubrir nuevas ideas.",
