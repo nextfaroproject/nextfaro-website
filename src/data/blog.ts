@@ -30,7 +30,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Beneficios de la lectura diaria",
     description:
       "Descubre como leer todos los dias puede mejorar tu enfoque, tu criterio y tu crecimiento personal.",
-    image: "/brand/nextfaro-hero-clean.png",
+    image: "/blog/beneficios-lectura-diaria.jpg",
     category: "Lectura",
     publishedAt: "2026-06-09",
     readingTime: "5 min",
@@ -94,7 +94,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Como crear el habito de leer todos los dias",
     description:
       "Una guia practica para convertir la lectura en una rutina sencilla, sostenible y disfrutable.",
-    image: "/books/habitos-atomicos-nextfaro.jpg",
+    image: "/blog/habito-leer-todos-los-dias.jpg",
     category: "Habitos",
     publishedAt: "2026-06-09",
     readingTime: "6 min",
@@ -158,7 +158,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Los mejores libros para mejorar tus finanzas personales",
     description:
       "Una guia para elegir libros de finanzas que ayudan a ordenar tu dinero, pensar mejor y construir riqueza.",
-    image: "/books/padre-rico-padre-pobre-nextfaro.jpg",
+    image: "/blog/libros-finanzas-personales.jpg",
     category: "Finanzas",
     publishedAt: "2026-06-09",
     readingTime: "6 min",
@@ -222,7 +222,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Por que la lectura mejora la concentracion",
     description:
       "Leer entrena la atencion profunda y puede ayudarte a recuperar foco en una vida llena de distracciones.",
-    image: "/books/12-reglas-para-vivir-nextfaro.jpg",
+    image: "/blog/lectura-concentracion.jpg",
     category: "Enfoque",
     publishedAt: "2026-06-09",
     readingTime: "5 min",
@@ -286,7 +286,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Como recordar mejor lo que lees",
     description:
       "Estrategias simples para retener ideas, conectar conceptos y aplicar mejor cada libro.",
-    image: "/brand/nextfaro-library-main.png",
+    image: "/blog/recordar-mejor-lo-que-lees.jpg",
     category: "Aprendizaje",
     publishedAt: "2026-06-09",
     readingTime: "6 min",
@@ -350,7 +350,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Lectura y desarrollo personal",
     description:
       "Como los libros pueden ayudarte a construir mejores habitos, mas claridad y una vida con mayor direccion.",
-    image: "/books/los-7-habitos-nextfaro.jpg",
+    image: "/blog/lectura-desarrollo-personal.jpg",
     category: "Desarrollo personal",
     publishedAt: "2026-06-09",
     readingTime: "6 min",
@@ -414,7 +414,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Libros recomendados para emprendedores",
     description:
       "Lecturas para fortalecer mentalidad, comunicacion, estrategia y finanzas al emprender.",
-    image: "/books/piense-y-hagase-rico-nextfaro.jpg",
+    image: "/blog/libros-emprendedores.jpg",
     category: "Emprendimiento",
     publishedAt: "2026-06-09",
     readingTime: "6 min",
@@ -478,7 +478,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Como elegir tu proximo libro",
     description:
       "Criterios simples para escoger lecturas que conecten con tus metas, tu etapa y tu curiosidad.",
-    image: "/brand/nextfaro-hero-clean.png",
+    image: "/blog/elegir-proximo-libro.jpg",
     category: "Guia de lectura",
     publishedAt: "2026-06-09",
     readingTime: "5 min",
@@ -542,7 +542,7 @@ export const blogArticles: BlogArticle[] = [
     title: "La importancia de aprender continuamente",
     description:
       "Por que el aprendizaje constante es una ventaja personal y profesional en un mundo cambiante.",
-    image: "/brand/nextfaro-library-main.png",
+    image: "/blog/aprender-continuamente.jpg",
     category: "Aprendizaje",
     publishedAt: "2026-06-09",
     readingTime: "6 min",
@@ -606,7 +606,7 @@ export const blogArticles: BlogArticle[] = [
     title: "Lectura fisica vs audiolibros",
     description:
       "Ventajas de cada formato y como combinarlos para aprender mas sin perder profundidad.",
-    image: "/brand/nextfaro-logo.png",
+    image: "/blog/lectura-fisica-vs-audiolibros.jpg",
     category: "Formatos",
     publishedAt: "2026-06-09",
     readingTime: "6 min",
