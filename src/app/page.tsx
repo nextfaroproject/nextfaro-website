@@ -49,6 +49,12 @@ export default function Home() {
               <Link className="transition hover:text-[#e9c46a]" href="/blog">
                 Blog
               </Link>
+              <Link
+                className="transition hover:text-[#e9c46a]"
+                href="/sobre-nosotros"
+              >
+                Sobre nosotros
+              </Link>
               <a
                 className="transition hover:text-[#e9c46a]"
                 href={youtubeUrl}
@@ -79,6 +85,12 @@ export default function Home() {
               href="/blog"
             >
               Blog
+            </Link>
+            <Link
+              className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
+              href="/sobre-nosotros"
+            >
+              Sobre nosotros
             </Link>
             <a
               className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"

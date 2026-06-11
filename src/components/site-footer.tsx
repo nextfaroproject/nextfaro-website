@@ -2,6 +2,8 @@ import Link from "next/link";
 
 const legalLinks = [
   { href: "/blog", label: "Blog" },
+  { href: "/sobre-nosotros", label: "Sobre nosotros" },
+  { href: "/politica-editorial", label: "Política editorial" },
   { href: "/contacto", label: "Contacto" },
   { href: "/privacidad", label: "Privacidad" },
   { href: "/terminos", label: "Términos" },

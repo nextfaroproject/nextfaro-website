@@ -9,6 +9,8 @@ import {
   getBlogArticle,
 } from "@/data/blog";
 
+const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
+
 type BlogArticlePageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -83,12 +85,26 @@ export default async function BlogArticlePage({
           </Link>
 
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#4b4030]">
+            <Link className="transition hover:text-[#a77518]" href="/#catalogo">
+              Catálogo
+            </Link>
             <Link className="transition hover:text-[#a77518]" href="/blog">
               Blog
             </Link>
-            <Link className="transition hover:text-[#a77518]" href="/#catalogo">
-              Ver catálogo
+            <Link
+              className="transition hover:text-[#a77518]"
+              href="/sobre-nosotros"
+            >
+              Sobre nosotros
             </Link>
+            <a
+              className="transition hover:text-[#a77518]"
+              href={youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              YouTube
+            </a>
           </nav>
         </div>
       </header>

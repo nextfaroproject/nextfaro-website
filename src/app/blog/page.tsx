@@ -46,14 +46,17 @@ export default function BlogPage() {
           </Link>
 
           <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#4b4030]">
-            <Link className="transition hover:text-[#a77518]" href="/">
-              Inicio
-            </Link>
             <Link className="transition hover:text-[#a77518]" href="/#catalogo">
-              Catalogo
+              Catálogo
             </Link>
             <Link className="font-semibold text-[#9a6a12]" href="/blog">
               Blog
+            </Link>
+            <Link
+              className="transition hover:text-[#a77518]"
+              href="/sobre-nosotros"
+            >
+              Sobre nosotros
             </Link>
             <a
               className="transition hover:text-[#a77518]"

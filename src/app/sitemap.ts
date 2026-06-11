@@ -17,6 +17,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${siteUrl}/sobre-nosotros`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/politica-editorial`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
     ...blogArticles.map((article) => ({
       url: `${siteUrl}/blog/${article.slug}`,
       lastModified: new Date(article.publishedAt),
