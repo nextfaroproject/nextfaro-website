@@ -24,6 +24,13 @@ export type BlogArticleApplication = {
   paragraphs: string[];
 };
 
+export type BlogArticleEditorialGuide = {
+  usefulFor: string;
+  commonMistakes: string[];
+  nextFaroRecommendation: string;
+  relatedBookNotes: string[];
+};
+
 export const blogArticles: BlogArticle[] = [
   {
     slug: "beneficios-de-la-lectura-diaria",
@@ -750,6 +757,172 @@ export const blogArticleApplications: Record<string, BlogArticleApplication> = {
       "La combinacion mas poderosa es usar cada formato para lo que hace mejor. Puedes escuchar una primera pasada para captar el mapa general y luego leer en fisico los capitulos que quieres aplicar. Tambien puedes leer un libro importante y usar audio para repasar ideas. Lo importante es no medir el valor por el formato, sino por la calidad de atencion que logras darle.",
       "Para decidir, observa el tipo de contenido. Si hay ejercicios, datos o conceptos dificiles, el papel facilita volver y subrayar. Si hay relatos, biografias o reflexiones amplias, el audio puede fluir muy bien. La meta no es defender un formato, sino construir una relacion mas constante con las ideas que quieres tener cerca.",
       "Lo importante es que el formato trabaje a favor de tu atencion, no en contra.",
+    ],
+  },
+};
+
+export const blogArticleEditorialGuides: Record<
+  string,
+  BlogArticleEditorialGuide
+> = {
+  "beneficios-de-la-lectura-diaria": {
+    usefulFor:
+      "Este tema sirve para lectores que quieren recuperar concentración, reducir el consumo automático de pantalla y construir una rutina sencilla de aprendizaje.",
+    commonMistakes: [
+      "Empezar con metas demasiado grandes y abandonar cuando aparece una semana ocupada.",
+      "Confundir leer muchos títulos con aprender mejor. La calidad de atención importa más que la cantidad.",
+      "No guardar ninguna idea aplicable después de leer, lo que hace que el aprendizaje se vuelva difuso.",
+    ],
+    nextFaroRecommendation:
+      "La recomendación editorial de NextFaro es empezar con diez minutos diarios y cerrar cada lectura con una sola pregunta: qué idea puedo aplicar hoy. Esa práctica convierte la lectura en una herramienta real, no en una obligación estética.",
+    relatedBookNotes: [
+      "Hábitos Atómicos ayuda a diseñar rutinas pequeñas y sostenibles.",
+      "Los 7 hábitos de la gente altamente efectiva aporta principios para ordenar prioridades.",
+      "El hombre en busca de sentido conecta la lectura con propósito y resiliencia.",
+    ],
+  },
+  "como-crear-el-habito-de-leer-todos-los-dias": {
+    usefulFor:
+      "Este artículo es útil para personas que compran libros con ilusión, pero luego pierden continuidad por falta de sistema, tiempo o energía.",
+    commonMistakes: [
+      "Cambiar de libro cada pocos días buscando motivación nueva.",
+      "Leer solo cuando sobra tiempo, en vez de reservar un momento breve y repetible.",
+      "Usar la culpa como método de disciplina. La culpa agota; el diseño del entorno ayuda más.",
+    ],
+    nextFaroRecommendation:
+      "NextFaro recomienda crear una rutina mínima: mismo lugar, mismo horario aproximado y una meta pequeña. El hábito se vuelve fuerte cuando es fácil volver a él incluso después de fallar un día.",
+    relatedBookNotes: [
+      "Hábitos Atómicos explica por qué el entorno facilita o dificulta una conducta.",
+      "Poder sin límites puede servir para trabajar energía, enfoque y lenguaje interno.",
+      "Los 7 hábitos de la gente altamente efectiva ayuda a conectar lectura con prioridades personales.",
+    ],
+  },
+  "mejores-libros-para-mejorar-finanzas-personales": {
+    usefulFor:
+      "Sirve para lectores que quieren mejorar su relación con el dinero sin caer en promesas rápidas ni decisiones impulsivas.",
+    commonMistakes: [
+      "Buscar una fórmula única para hacerse rico en lugar de aprender principios.",
+      "Invertir por entusiasmo después de leer un capítulo sin estudiar riesgos.",
+      "Leer finanzas sin revisar números reales: ingresos, gastos, deudas, ahorro y objetivos.",
+    ],
+    nextFaroRecommendation:
+      "La postura editorial de NextFaro es leer finanzas con calma y pensamiento crítico. Un buen libro debe ayudarte a hacer mejores preguntas antes de mover dinero.",
+    relatedBookNotes: [
+      "Padre Rico, Padre Pobre abre conversaciones sobre activos, pasivos y educación financiera.",
+      "El inversor inteligente enseña paciencia, margen de seguridad y criterio racional.",
+      "Los secretos de la mente millonaria puede ayudar a revisar creencias personales sobre riqueza.",
+    ],
+  },
+  "por-que-la-lectura-mejora-la-concentracion": {
+    usefulFor:
+      "Este tema ayuda a quienes sienten que les cuesta sostener la atención, terminar tareas o leer sin mirar el teléfono.",
+    commonMistakes: [
+      "Creer que la concentración vuelve sola sin entrenarla.",
+      "Leer con el teléfono al lado y aceptar interrupciones como algo normal.",
+      "Elegir textos demasiado difíciles al inicio y confundir dificultad con incapacidad.",
+    ],
+    nextFaroRecommendation:
+      "NextFaro recomienda tratar la lectura como un entrenamiento de presencia. Cinco páginas leídas sin interrupciones valen más que treinta páginas atravesadas con ansiedad.",
+    relatedBookNotes: [
+      "12 reglas para vivir puede aportar estructura y responsabilidad personal.",
+      "Hábitos Atómicos ayuda a crear señales y rutinas para proteger el foco.",
+      "El poder del ahora conecta concentración con presencia y observación interior.",
+    ],
+  },
+  "como-recordar-mejor-lo-que-lees": {
+    usefulFor:
+      "Ideal para lectores que terminan libros interesantes, pero semanas después sienten que no retuvieron casi nada.",
+    commonMistakes: [
+      "Subrayar demasiado y no volver nunca a las notas.",
+      "Copiar frases bonitas sin traducirlas a palabras propias.",
+      "Leer siempre hacia adelante sin pausas de revisión o aplicación.",
+    ],
+    nextFaroRecommendation:
+      "La recomendación de NextFaro es usar una nota breve por capítulo: idea central, ejemplo personal y acción posible. Recordar mejora cuando el conocimiento se conecta con tu vida.",
+    relatedBookNotes: [
+      "Cómo ganar amigos e influir sobre las personas se recuerda mejor si aplicas una idea en una conversación real.",
+      "El inversor inteligente exige notas y relectura para convertir conceptos en criterio.",
+      "El hombre en busca de sentido invita a reflexionar, no solo a memorizar.",
+    ],
+  },
+  "lectura-y-desarrollo-personal": {
+    usefulFor:
+      "Sirve para quienes leen desarrollo personal y quieren evitar que todo se quede en motivación temporal.",
+    commonMistakes: [
+      "Buscar frases inspiradoras sin cambiar ninguna conducta concreta.",
+      "Leer muchos libros parecidos esperando una solución externa.",
+      "Aplicar consejos sin adaptarlos a la etapa, contexto y responsabilidades propias.",
+    ],
+    nextFaroRecommendation:
+      "NextFaro sugiere elegir una idea por semana y probarla en una situación real. El desarrollo personal madura cuando se vuelve observación, acción y revisión honesta.",
+    relatedBookNotes: [
+      "Hábitos Atómicos convierte el cambio personal en acciones pequeñas.",
+      "El poder del ahora trabaja presencia y relación con el pensamiento.",
+      "El alquimista aporta una mirada narrativa sobre propósito y búsqueda personal.",
+    ],
+  },
+  "libros-recomendados-para-emprendedores": {
+    usefulFor:
+      "Pensado para emprendedores, creadores y profesionales que quieren tomar mejores decisiones sin depender solo de motivación.",
+    commonMistakes: [
+      "Leer únicamente historias de éxito y olvidar números, clientes y ejecución.",
+      "Aplicar consejos de grandes empresas a proyectos pequeños sin adaptarlos.",
+      "Consumir contenido de negocio sin hablar con el mercado real.",
+    ],
+    nextFaroRecommendation:
+      "NextFaro recomienda una biblioteca equilibrada: mentalidad para sostener, finanzas para cuidar recursos, comunicación para vender valor y estrategia para decidir con perspectiva.",
+    relatedBookNotes: [
+      "Piense y hágase rico trabaja deseo, enfoque y persistencia.",
+      "El inversor inteligente aporta prudencia para evaluar riesgos y valor.",
+      "Cómo ganar amigos e influir sobre las personas ayuda a comunicar con empatía.",
+    ],
+  },
+  "como-elegir-tu-proximo-libro": {
+    usefulFor:
+      "Útil para lectores con muchos pendientes que quieren elegir mejor y evitar compras impulsivas o listas infinitas.",
+    commonMistakes: [
+      "Elegir solo por popularidad sin revisar si el tema encaja con tu momento.",
+      "Comprar varios libros del mismo tipo y perder variedad intelectual.",
+      "Abandonar una lectura necesaria porque exige más atención que entretenimiento rápido.",
+    ],
+    nextFaroRecommendation:
+      "La recomendación editorial es elegir con intención: un libro para actuar, uno para pensar y uno para disfrutar. Una biblioteca equilibrada acompaña distintas etapas de la vida.",
+    relatedBookNotes: [
+      "Hábitos Atómicos es buena opción si quieres acción concreta.",
+      "1984 funciona si buscas pensamiento crítico y lectura narrativa.",
+      "El alquimista puede acompañar una etapa de propósito y búsqueda personal.",
+    ],
+  },
+  "importancia-de-aprender-continuamente": {
+    usefulFor:
+      "Este tema sirve para personas que quieren mantenerse actualizadas sin sentirse saturadas por información constante.",
+    commonMistakes: [
+      "Confundir aprender con consumir contenido sin pausa.",
+      "No revisar ideas antiguas, aunque sigan influyendo en decisiones actuales.",
+      "Aprender sin aplicar, conversar o escribir, lo que debilita la integración.",
+    ],
+    nextFaroRecommendation:
+      "NextFaro recomienda crear una ruta mensual de aprendizaje: tema, libro, notas y una acción. La continuidad necesita dirección para no convertirse en dispersión.",
+    relatedBookNotes: [
+      "Los 7 hábitos de la gente altamente efectiva ayuda a ordenar prioridades.",
+      "El hombre en busca de sentido aporta profundidad sobre propósito.",
+      "Las enseñanzas secretas de todos los tiempos puede abrir curiosidad filosófica y simbólica.",
+    ],
+  },
+  "lectura-fisica-vs-audiolibros": {
+    usefulFor:
+      "Ideal para quienes quieren aprender más, pero no siempre tienen tiempo o energía para sentarse a leer en formato físico.",
+    commonMistakes: [
+      "Pensar que escuchar audiolibros no cuenta como aprendizaje.",
+      "Escuchar sin atención mientras haces tareas demasiado demandantes.",
+      "Usar un solo formato para todos los libros, aunque cada tema pida un ritmo distinto.",
+    ],
+    nextFaroRecommendation:
+      "La postura de NextFaro es práctica: usa el libro físico para profundidad y el audio para continuidad. Lo importante es la calidad de atención y la aplicación posterior.",
+    relatedBookNotes: [
+      "Hábitos Atómicos funciona bien en ambos formatos porque sus ideas son accionables.",
+      "El poder del ahora puede beneficiarse de pausas, repetición y escucha reflexiva.",
+      "Cómo ganar amigos e influir sobre las personas se vuelve más útil cuando escuchas y luego practicas una técnica concreta.",
     ],
   },
 };

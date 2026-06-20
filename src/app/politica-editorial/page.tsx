@@ -31,6 +31,14 @@ const sections = [
     text: "Los artículos publicados en el blog de NextFaro son redactados con intención informativa y educativa. Buscamos que cada texto aporte contexto, ideas útiles y orientación clara para quienes desean leer más, aprender mejor o elegir su próximo libro.",
   },
   {
+    title: "Cómo escribimos los artículos",
+    text: "Cada artículo intenta responder una necesidad concreta del lector: crear hábito, elegir mejor, concentrarse, recordar ideas o aplicar conocimiento. Evitamos publicar textos vacíos y preferimos incluir ejemplos, errores comunes, recomendaciones editoriales y rutas de lectura.",
+  },
+  {
+    title: "Revisión y actualización",
+    text: "El contenido puede revisarse para corregir errores, mejorar claridad, actualizar enlaces, ampliar explicaciones o mantener la información alineada con el enfoque editorial del proyecto.",
+  },
+  {
     title: "Enlaces de afiliado",
     text: "Algunos enlaces del sitio pueden ser enlaces de afiliado. Esto significa que, si realizas una compra a través de esos enlaces, NextFaro Audiolibros puede recibir una comisión sin costo adicional para ti. La presencia de enlaces de afiliado no cambia nuestro objetivo editorial: recomendar libros y contenidos que consideramos útiles.",
   },
@@ -41,6 +49,10 @@ const sections = [
   {
     title: "Actualización del contenido",
     text: "Podemos actualizar artículos, descripciones o recomendaciones para mejorar la claridad, corregir información o mantener el sitio relevante.",
+  },
+  {
+    title: "Qué publicamos",
+    text: "Publicamos recomendaciones de libros, guías de lectura, artículos sobre aprendizaje, hábitos, finanzas personales, emprendimiento, comunicación, filosofía, productividad y audiolibros. El contenido busca ayudar a leer mejor y pensar con más profundidad.",
   },
 ];
 

@@ -9,18 +9,8 @@ const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
 export const metadata: Metadata = {
   title: "Blog | NextFaro Audiolibros",
   description:
-    "Articulos sobre lectura, libros fisicos, aprendizaje, finanzas personales y desarrollo personal.",
+    "Guías originales sobre lectura, libros físicos, aprendizaje, finanzas personales y desarrollo personal.",
 };
-
-function AdPlaceholder() {
-  return (
-    <div className="flex min-h-28 w-full items-center justify-center rounded-lg border border-[#b88a2d]/22 bg-[#f1e4cd] px-5 py-6 text-center shadow-[0_12px_34px_rgba(67,44,12,0.06)]">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a641d]/70">
-        Espacio publicitario
-      </p>
-    </div>
-  );
-}
 
 export default function BlogPage() {
   return (
@@ -78,13 +68,41 @@ export default function BlogPage() {
           <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight text-[#17130d] sm:text-5xl">
             Blog de NextFaro
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-[#514636] sm:text-lg">
-            Guias y articulos originales para leer mejor, elegir buenos libros
-            y convertir el conocimiento en una practica diaria.
+          <p className="mt-4 max-w-3xl text-base leading-7 text-[#514636] sm:text-lg">
+            Guías y artículos originales para leer mejor, elegir libros con más
+            criterio, crear hábitos de lectura y aplicar ideas útiles en la vida
+            diaria. El blog complementa la biblioteca recomendada con contexto,
+            consejos prácticos y reflexión editorial.
           </p>
 
-          <div className="mt-8">
-            <AdPlaceholder />
+          <div className="mt-7 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-lg border border-[#b88a2d]/18 bg-[#f7ecd9] p-4">
+              <h2 className="font-serif text-lg font-semibold">
+                Lectura práctica
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-[#5b5142]">
+                Métodos sencillos para leer con constancia, recordar mejor y
+                usar cada libro como herramienta de aprendizaje.
+              </p>
+            </div>
+            <div className="rounded-lg border border-[#b88a2d]/18 bg-[#f7ecd9] p-4">
+              <h2 className="font-serif text-lg font-semibold">
+                Recomendaciones con criterio
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-[#5b5142]">
+                Ideas para elegir libros según tu momento: hábitos, finanzas,
+                comunicación, filosofía, emprendimiento o propósito.
+              </p>
+            </div>
+            <div className="rounded-lg border border-[#b88a2d]/18 bg-[#f7ecd9] p-4">
+              <h2 className="font-serif text-lg font-semibold">
+                Aprendizaje continuo
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-[#5b5142]">
+                Reflexiones sobre cómo combinar lectura física, audiolibros y
+                contenido educativo sin caer en consumo automático.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -131,10 +149,6 @@ export default function BlogPage() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mx-auto mt-10 max-w-7xl">
-          <AdPlaceholder />
         </div>
       </section>
 

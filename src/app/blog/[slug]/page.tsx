@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
 import {
   blogArticleApplications,
+  blogArticleEditorialGuides,
   blogArticles,
   getBlogArticle,
 } from "@/data/blog";
@@ -57,6 +58,7 @@ export default async function BlogArticlePage({
   const { slug } = await params;
   const article = getBlogArticle(slug);
   const application = blogArticleApplications[slug];
+  const editorialGuide = blogArticleEditorialGuides[slug];
 
   if (!article) {
     notFound();
@@ -187,23 +189,65 @@ export default async function BlogArticlePage({
             </section>
           ) : null}
 
+          {editorialGuide ? (
+            <section className="mt-11 rounded-lg border border-[#b88a2d]/18 bg-[#fffaf1] p-5 shadow-[0_12px_34px_rgba(55,39,18,0.06)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a6a12]">
+                Criterio NextFaro
+              </p>
+              <h2 className="mt-2 font-serif text-2xl font-semibold leading-tight text-[#17130d]">
+                Recomendación editorial
+              </h2>
+              <div className="mt-4 space-y-6 text-base leading-8 text-[#3d3427] sm:text-lg">
+                <div>
+                  <h3 className="text-base font-semibold text-[#8a5d12]">
+                    Para quién sirve
+                  </h3>
+                  <p className="mt-2">{editorialGuide.usefulFor}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-base font-semibold text-[#8a5d12]">
+                    Errores comunes
+                  </h3>
+                  <ul className="mt-2 list-disc space-y-2 pl-5">
+                    {editorialGuide.commonMistakes.map((mistake) => (
+                      <li key={mistake}>{mistake}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-base font-semibold text-[#8a5d12]">
+                    Cómo lo vemos en NextFaro
+                  </h3>
+                  <p className="mt-2">
+                    {editorialGuide.nextFaroRecommendation}
+                  </p>
+                </div>
+              </div>
+            </section>
+          ) : null}
+
           <section className="mt-11 rounded-lg border border-[#b88a2d]/18 bg-[#fffaf1] p-5 shadow-[0_12px_34px_rgba(55,39,18,0.06)]">
             <h2 className="font-serif text-2xl font-semibold text-[#17130d]">
               Libros relacionados
             </h2>
             <p className="mt-3 text-sm leading-6 text-[#5b5142]">
-              Para profundizar, puedes visitar el catalogo de NextFaro y buscar:
+              Para profundizar, puedes visitar el catálogo de NextFaro y buscar
+              estas lecturas relacionadas:
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {article.relatedBooks.map((book) => (
-                <Link
-                  key={book}
-                  href="/#catalogo"
-                  className="rounded-full border border-[#b88a2d]/28 px-3 py-2 text-xs font-semibold text-[#8a5d12] transition hover:border-[#b88a2d]/70 hover:bg-[#f0dfbd]/60"
-                >
-                  {book}
-                </Link>
-              ))}
+            <div className="mt-4 space-y-3">
+              {(editorialGuide?.relatedBookNotes ?? article.relatedBooks).map(
+                (book) => (
+                  <Link
+                    key={book}
+                    href="/#catalogo"
+                    className="block rounded-md border border-[#b88a2d]/20 px-4 py-3 text-sm font-medium leading-6 text-[#5c4214] transition hover:border-[#b88a2d]/60 hover:bg-[#f0dfbd]/60"
+                  >
+                    {book}
+                  </Link>
+                ),
+              )}
             </div>
           </section>
 

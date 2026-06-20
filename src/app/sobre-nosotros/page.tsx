@@ -19,8 +19,16 @@ const navLinks = [
 
 const sections = [
   {
+    title: "Quién está detrás del proyecto",
+    text: "NextFaro es impulsado por una persona interesada en la lectura, los audiolibros y el aprendizaje continuo. No buscamos convertir el sitio en una tienda de enlaces, sino en un espacio editorial donde cada recomendación tenga contexto y propósito.",
+  },
+  {
     title: "Nuestra misión",
     text: "Ayudar a más personas a acercarse al conocimiento mediante libros, audiolibros y contenidos prácticos que puedan aplicar en su vida diaria.",
+  },
+  {
+    title: "Criterios de selección",
+    text: "Seleccionamos libros por su utilidad, claridad, relevancia cultural, capacidad de abrir preguntas o potencial para ayudar al lector a tomar mejores decisiones. No todos los libros sirven para todas las etapas, por eso intentamos orientar con categorías y artículos complementarios.",
   },
   {
     title: "Por qué existen los audiolibros",
@@ -33,6 +41,10 @@ const sections = [
   {
     title: "Nuestro compromiso",
     text: "Queremos que el sitio sea claro, útil y honesto. Algunos enlaces pueden ser de afiliado, lo que significa que podemos recibir una comisión si una persona compra a través de ellos, sin costo adicional para el usuario. Esto ayuda a sostener el proyecto.",
+  },
+  {
+    title: "Libros físicos, audio y aprendizaje continuo",
+    text: "Defendemos una relación flexible con el conocimiento: leer en papel cuando se necesita profundidad, escuchar audiolibros cuando se busca continuidad y volver a las ideas importantes cuando llega el momento de aplicarlas.",
   },
 ];
 

@@ -138,13 +138,55 @@ export default function Home() {
 
       <section
         id="metodo"
-        className="border-y border-[#e9c46a]/14 bg-[#070706] px-5 py-10 sm:px-8 sm:py-12 lg:px-10"
+        className="bg-[#fff7e8] px-5 py-12 text-[#11100d] sm:px-8 sm:py-14 lg:px-10"
       >
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto flex min-h-28 max-w-3xl items-center justify-center rounded-lg border border-[#e9c46a]/18 bg-[#fff7e8]/[0.025] px-6 py-8 text-center shadow-[0_14px_40px_rgba(0,0,0,0.18)]">
-            <p className="text-sm font-semibold tracking-[0.18em] text-[#d6b15f]/78">
-              Espacio publicitario
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.35fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#9a6a12]">
+              Proyecto editorial
             </p>
+            <h2 className="font-serif text-3xl font-semibold leading-tight sm:text-4xl">
+              Más que una lista de libros: una guía para aprender mejor.
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-7 text-[#594a32]">
+              NextFaro reúne recomendaciones, artículos y criterios de lectura
+              para que cada libro tenga contexto. La idea no es comprar por
+              impulso, sino elegir lecturas que ayuden a pensar, crear hábitos y
+              aplicar conocimiento en la vida diaria.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                title: "Cómo elegimos los libros",
+                text: "Priorizamos obras con ideas útiles, claridad práctica, impacto cultural o valor formativo para lectores que quieren crecer con criterio.",
+              },
+              {
+                title: "Guías para leer mejor",
+                text: "El blog complementa el catálogo con artículos sobre hábitos de lectura, memoria, concentración, finanzas personales y aprendizaje continuo.",
+              },
+              {
+                title: "Libros según tu objetivo",
+                text: "Puedes empezar por hábitos, comunicación, finanzas, filosofía o desarrollo personal según la etapa que quieras trabajar.",
+              },
+              {
+                title: "Audiolibros y aprendizaje",
+                text: "También valoramos el audio como una forma de mantener contacto con buenas ideas mientras caminas, viajas o haces tareas simples.",
+              },
+            ].map((item) => (
+              <article
+                key={item.title}
+                className="rounded-lg border border-[#b88a2d]/18 bg-white/55 p-5 shadow-[0_14px_34px_rgba(55,39,18,0.07)]"
+              >
+                <h3 className="font-serif text-xl font-semibold text-[#17130d]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[#5b4d37]">
+                  {item.text}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -211,10 +253,34 @@ export default function Home() {
             ellos, puedo recibir una comisión sin costo adicional para ti.
           </p>
 
-          <div className="mx-auto mt-8 flex min-h-24 max-w-3xl items-center justify-center rounded-lg border border-[#e9c46a]/14 bg-[#fff7e8]/[0.02] px-5 py-6 text-center shadow-[0_12px_34px_rgba(0,0,0,0.14)]">
-            <p className="text-xs font-semibold tracking-[0.18em] text-[#d6b15f]/70">
-              Espacio publicitario
-            </p>
+          <div className="mt-8 grid gap-4 rounded-lg border border-[#e9c46a]/14 bg-[#fff7e8]/[0.035] p-5 sm:grid-cols-3">
+            <div>
+              <h3 className="font-serif text-xl text-[#fff7e8]">
+                Para empezar
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-[#fff7e8]/62">
+                Si quieres crear rutina, empieza por hábitos, productividad o
+                concentración antes de saltar a lecturas más densas.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl text-[#fff7e8]">
+                Para pensar mejor
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-[#fff7e8]/62">
+                Filosofía, novelas con ideas fuertes y libros sobre sentido
+                ayudan a ampliar perspectiva y criterio personal.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl text-[#fff7e8]">
+                Para aplicar
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-[#fff7e8]/62">
+                Finanzas, comunicación y estrategia son mejores cuando cierras
+                cada capítulo con una acción concreta.
+              </p>
+            </div>
           </div>
         </div>
       </section>
