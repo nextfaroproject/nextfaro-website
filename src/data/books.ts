@@ -192,4 +192,13 @@ export const books: Book[] = [
     link: "https://amzn.to/4tca0Xw",
     category: "Espiritualidad",
   },
+  {
+    title: "El niño estrella",
+    author: "Claire A. Nivola",
+    description:
+      "Un relato ilustrado sobre la luz, la vida y el viaje de llegar a la Tierra.",
+    image: "/books/el-nino-estrella-nextfaro.png",
+    link: "https://amzn.to/3TCwg0E",
+    category: "Infantil",
+  },
 ];
