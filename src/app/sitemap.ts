@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogArticles } from "@/data/blog";
+import { bookGuides } from "@/data/book-guides";
 
 const siteUrl = "https://nextfaroaudiolibros.com";
 
@@ -34,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(article.publishedAt),
       changeFrequency: "monthly" as const,
       priority: 0.65,
+    })),
+    ...bookGuides.map((guide) => ({
+      url: `${siteUrl}/libros/${guide.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     {
       url: `${siteUrl}/contacto`,

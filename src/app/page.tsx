@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getBookGuideByTitle } from "@/data/book-guides";
 import { books } from "@/data/books";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -154,6 +155,18 @@ export default function Home() {
               impulso, sino elegir lecturas que ayuden a pensar, crear hábitos y
               aplicar conocimiento en la vida diaria.
             </p>
+            <p className="mt-4 max-w-xl text-base leading-7 text-[#594a32]">
+              Leer no consiste únicamente en terminar páginas. Una lectura atenta
+              amplía el vocabulario con el que interpretamos lo que ocurre, nos
+              permite comparar perspectivas y nos enseña a formular preguntas más
+              precisas antes de aceptar una respuesta.
+            </p>
+            <Link
+              href="/politica-editorial"
+              className="mt-5 inline-flex text-sm font-semibold text-[#80550c] underline decoration-[#b88a2d]/45 underline-offset-4 transition hover:text-[#503503]"
+            >
+              Conoce nuestro criterio editorial
+            </Link>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -188,6 +201,51 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <div className="lg:col-span-2">
+            <div className="grid gap-7 border-t border-[#b88a2d]/20 pt-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9a6a12]">
+                  Leer para pensar mejor
+                </p>
+                <h3 className="mt-2 font-serif text-2xl font-semibold leading-tight sm:text-3xl">
+                  Cada libro puede actualizar nuestra manera de mirar.
+                </h3>
+                <div className="mt-4 space-y-4 text-base leading-7 text-[#594a32]">
+                  <p>
+                    Una mente expuesta siempre a las mismas ideas termina usando
+                    las mismas respuestas. Los libros abren conversaciones con
+                    otras épocas, profesiones, culturas y experiencias. Incluso
+                    cuando no estamos de acuerdo con un autor, debemos ordenar
+                    nuestros argumentos y reconocer qué evidencia sostiene lo que
+                    pensamos.
+                  </p>
+                  <p>
+                    Esa actualización no sucede por acumular títulos. Aparece al
+                    detenernos, relacionar una idea con la experiencia, contrastarla
+                    con otras fuentes y decidir qué merece convertirse en acción.
+                    Por eso una buena biblioteca no solo reúne información: también
+                    entrena atención, criterio y capacidad de cambiar de opinión.
+                  </p>
+                  <p>
+                    NextFaro combina catálogo y contenido editorial para acompañar
+                    ese proceso. Cada ficha explica por qué puede interesar una obra,
+                    qué preguntas conviene llevar a la lectura y qué límites o
+                    controversias deben conocerse antes de tomar sus afirmaciones como
+                    hechos.
+                  </p>
+                </div>
+              </div>
+              <aside className="rounded-lg border border-[#b88a2d]/20 bg-[#efe0c3]/70 p-5">
+                <h3 className="font-serif text-xl font-semibold">Una lectura más activa</h3>
+                <ol className="mt-4 space-y-4 text-sm leading-6 text-[#544631]">
+                  <li><strong className="text-[#80550c]">1. Pregunta:</strong> define qué deseas comprender antes de empezar.</li>
+                  <li><strong className="text-[#80550c]">2. Contrasta:</strong> separa opinión, experiencia y evidencia.</li>
+                  <li><strong className="text-[#80550c]">3. Aplica:</strong> convierte una idea útil en una acción pequeña.</li>
+                </ol>
+              </aside>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -206,46 +264,48 @@ export default function Home() {
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {books.map((book) => (
-              <article
-                key={`${book.title}-${book.author}`}
-                className="group flex h-full flex-col rounded-lg border border-[#d6b15f]/10 bg-[#fff7e8]/[0.025] p-3 shadow-[0_10px_34px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d6b15f]/45 hover:bg-[#fff7e8]/[0.045] hover:shadow-[0_18px_48px_rgba(0,0,0,0.22)]"
-              >
-                <div className="relative mx-auto aspect-[2/3] w-30 overflow-hidden rounded-lg border border-[#d6b15f]/28 bg-[#0b0906] shadow-[0_14px_34px_rgba(0,0,0,0.32)] transition duration-300 group-hover:border-[#d6b15f]/60 group-hover:shadow-[0_18px_42px_rgba(0,0,0,0.38)]">
-                  <div className="absolute inset-y-0 left-0 z-10 w-2 bg-linear-to-r from-black/22 to-transparent" />
-                  <Image
-                    src={book.image || fallbackBookImage}
-                    alt={`Portada de ${book.title}`}
-                    fill
-                    sizes="120px"
-                    className="object-cover"
-                  />
-                </div>
+            {books.map((book) => {
+              const guide = getBookGuideByTitle(book.title);
 
-                <p className="mt-3 text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-[#d6b15f]/78">
-                  {book.category}
-                </p>
-                <h3 className="mt-1.5 text-center font-serif text-lg leading-tight text-[#fff7e8]">
-                  {book.title}
-                </h3>
-                <p className="mt-1 text-center text-xs font-semibold text-[#fff7e8]/52">
-                  {book.author}
-                </p>
-
-                <p className="mt-2 line-clamp-2 flex-1 text-center text-sm leading-5 text-[#fff7e8]/62">
-                  {book.description}
-                </p>
-
-                <a
-                  href={book.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mx-auto mt-3 rounded-full border border-[#d6b15f]/70 bg-[#d6b15f] px-4 py-2 text-center text-xs font-bold text-[#11100d] transition-all duration-300 hover:bg-transparent hover:text-[#f0d27a]"
+              return (
+                <article
+                  key={`${book.title}-${book.author}`}
+                  className="group flex h-full flex-col rounded-lg border border-[#d6b15f]/10 bg-[#fff7e8]/[0.025] p-3 shadow-[0_10px_34px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d6b15f]/45 hover:bg-[#fff7e8]/[0.045] hover:shadow-[0_18px_48px_rgba(0,0,0,0.22)]"
                 >
-                  Comprar libro
-                </a>
-              </article>
-            ))}
+                  <div className="relative mx-auto aspect-[2/3] w-30 overflow-hidden rounded-lg border border-[#d6b15f]/28 bg-[#0b0906] shadow-[0_14px_34px_rgba(0,0,0,0.32)] transition duration-300 group-hover:border-[#d6b15f]/60 group-hover:shadow-[0_18px_42px_rgba(0,0,0,0.38)]">
+                    <div className="absolute inset-y-0 left-0 z-10 w-2 bg-linear-to-r from-black/22 to-transparent" />
+                    <Image
+                      src={book.image || fallbackBookImage}
+                      alt={`Portada de ${book.title}`}
+                      fill
+                      sizes="120px"
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <p className="mt-3 text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-[#d6b15f]/78">
+                    {book.category}
+                  </p>
+                  <h3 className="mt-1.5 text-center font-serif text-lg leading-tight text-[#fff7e8]">
+                    {book.title}
+                  </h3>
+                  <p className="mt-1 text-center text-xs font-semibold text-[#fff7e8]/52">
+                    {book.author}
+                  </p>
+
+                  <p className="mt-2 line-clamp-2 flex-1 text-center text-sm leading-5 text-[#fff7e8]/62">
+                    {book.description}
+                  </p>
+
+                  <Link
+                    href={guide ? `/libros/${guide.slug}` : "#catalogo"}
+                    className="mx-auto mt-3 rounded-full border border-[#d6b15f]/70 bg-[#d6b15f] px-4 py-2 text-center text-xs font-bold text-[#11100d] transition-all duration-300 hover:bg-transparent hover:text-[#f0d27a]"
+                  >
+                    Conocer el libro
+                  </Link>
+                </article>
+              );
+            })}
           </div>
 
           <p className="mt-6 max-w-3xl rounded-md border border-[#e9c46a]/14 bg-[#070706]/40 p-3 text-xs leading-5 text-[#fff7e8]/58">
