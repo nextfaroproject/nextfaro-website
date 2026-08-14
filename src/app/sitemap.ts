@@ -1,32 +1,40 @@
 import type { MetadataRoute } from "next";
 import { blogArticles } from "@/data/blog";
 import { bookGuides } from "@/data/book-guides";
+import { bookCategories } from "@/data/categories";
+import { siteUrl } from "@/lib/site";
 
-const siteUrl = "https://nextfaroaudiolibros.com";
+const editorialUpdate = new Date("2026-08-14");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${siteUrl}/`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
+      url: `${siteUrl}/catalogo`,
+      lastModified: editorialUpdate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${siteUrl}/sobre-nosotros`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "yearly",
       priority: 0.6,
     },
     {
       url: `${siteUrl}/politica-editorial`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "yearly",
       priority: 0.6,
     },
@@ -38,25 +46,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...bookGuides.map((guide) => ({
       url: `${siteUrl}/libros/${guide.slug}`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
+    ...bookCategories.map((category) => ({
+      url: `${siteUrl}/categoria/${category.slug}`,
+      lastModified: editorialUpdate,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    })),
+    {
+      url: `${siteUrl}/audiolibros`,
+      lastModified: editorialUpdate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/divulgacion-afiliados`,
+      lastModified: editorialUpdate,
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
     {
       url: `${siteUrl}/contacto`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${siteUrl}/privacidad`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "yearly",
       priority: 0.4,
     },
     {
       url: `${siteUrl}/terminos`,
-      lastModified: new Date(),
+      lastModified: editorialUpdate,
       changeFrequency: "yearly",
       priority: 0.4,
     },

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { EditorialAuthor } from "@/components/editorial-author";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import {
   blogArticleApplications,
@@ -9,6 +12,8 @@ import {
   blogArticles,
   getBlogArticle,
 } from "@/data/blog";
+import { getBookGuideByTitle } from "@/data/book-guides";
+import { absoluteUrl, editorialAuthor, siteName } from "@/lib/site";
 
 const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
 
@@ -32,12 +37,12 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: "Artículo no encontrado | NextFaro Audiolibros",
+      title: "Artículo no encontrado",
     };
   }
 
   return {
-    title: `${article.title} | NextFaro Audiolibros`,
+    title: article.title,
     description: article.description,
     alternates: {
       canonical: `/blog/${article.slug}`,
@@ -48,6 +53,7 @@ export async function generateMetadata({
       images: [article.image],
       type: "article",
       publishedTime: article.publishedAt,
+      modifiedTime: "2026-08-14",
     },
   };
 }
@@ -64,8 +70,31 @@ export default async function BlogArticlePage({
     notFound();
   }
 
+  const canonical = absoluteUrl(`/blog/${article.slug}`);
+  const relatedBooks = article.relatedBooks
+    .map((title, index) => ({
+      title,
+      note: editorialGuide?.relatedBookNotes[index],
+      guide: getBookGuideByTitle(title),
+    }))
+    .filter((item) => item.guide !== undefined);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    image: absoluteUrl(article.image),
+    datePublished: article.publishedAt,
+    dateModified: "2026-08-14",
+    inLanguage: "es",
+    mainEntityOfPage: canonical,
+    author: { "@type": "Organization", name: editorialAuthor.name },
+    publisher: { "@type": "Organization", name: siteName },
+  };
+
   return (
     <main className="min-h-screen bg-[#f6efe2] text-[#17130d]">
+      <JsonLd data={jsonLd} />
       <header className="border-b border-[#b88a2d]/18 bg-[#fffaf1]/95 px-5 py-5 sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-5xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <Link
@@ -87,7 +116,7 @@ export default async function BlogArticlePage({
           </Link>
 
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#4b4030]">
-            <Link className="transition hover:text-[#a77518]" href="/#catalogo">
+            <Link className="transition hover:text-[#a77518]" href="/catalogo">
               Catálogo
             </Link>
             <Link className="transition hover:text-[#a77518]" href="/blog">
@@ -98,6 +127,9 @@ export default async function BlogArticlePage({
               href="/sobre-nosotros"
             >
               Sobre nosotros
+            </Link>
+            <Link className="transition hover:text-[#a77518]" href="/audiolibros">
+              Audiolibros
             </Link>
             <a
               className="transition hover:text-[#a77518]"
@@ -113,12 +145,7 @@ export default async function BlogArticlePage({
 
       <article className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
         <div className="mx-auto max-w-3xl">
-          <Link
-            href="/blog"
-            className="text-sm font-semibold text-[#9a6a12] transition hover:text-[#6f4a0b]"
-          >
-            Volver al blog
-          </Link>
+          <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog" }, { label: article.title, href: `/blog/${article.slug}` }]} />
 
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#9a6a12]">
             <span>{article.category}</span>
@@ -195,7 +222,7 @@ export default async function BlogArticlePage({
                 Criterio NextFaro
               </p>
               <h2 className="mt-2 font-serif text-2xl font-semibold leading-tight text-[#17130d]">
-                Recomendación editorial
+                Cómo aprovechar esta guía sobre {article.title.toLocaleLowerCase("es")}
               </h2>
               <div className="mt-4 space-y-6 text-base leading-8 text-[#3d3427] sm:text-lg">
                 <div>
@@ -228,32 +255,32 @@ export default async function BlogArticlePage({
             </section>
           ) : null}
 
-          <section className="mt-11 rounded-lg border border-[#b88a2d]/18 bg-[#fffaf1] p-5 shadow-[0_12px_34px_rgba(55,39,18,0.06)]">
+          {relatedBooks.length > 0 ? <section className="mt-11 rounded-lg border border-[#b88a2d]/18 bg-[#fffaf1] p-5 shadow-[0_12px_34px_rgba(55,39,18,0.06)]">
             <h2 className="font-serif text-2xl font-semibold text-[#17130d]">
-              Libros relacionados
+              Lecturas para ampliar {article.title.toLocaleLowerCase("es")}
             </h2>
             <p className="mt-3 text-sm leading-6 text-[#5b5142]">
-              Para profundizar, puedes visitar el catálogo de NextFaro y buscar
-              estas lecturas relacionadas:
+              Estas fichas amplían el tema con contexto, límites, preguntas y una aplicación concreta:
             </p>
             <div className="mt-4 space-y-3">
-              {(editorialGuide?.relatedBookNotes ?? article.relatedBooks).map(
-                (book) => (
+              {relatedBooks.map(
+                ({ title, note, guide }) => (
                   <Link
-                    key={book}
-                    href="/#catalogo"
+                    key={title}
+                    href={`/libros/${guide!.slug}`}
                     className="block rounded-md border border-[#b88a2d]/20 px-4 py-3 text-sm font-medium leading-6 text-[#5c4214] transition hover:border-[#b88a2d]/60 hover:bg-[#f0dfbd]/60"
                   >
-                    {book}
+                    <span className="block font-semibold text-[#3d2d12]">{title}</span>
+                    {note ? <span className="mt-1 block font-normal text-[#6a5a42]">{note}</span> : null}
                   </Link>
                 ),
               )}
             </div>
-          </section>
+          </section> : null}
 
           <section className="mt-11 border-t border-[#b88a2d]/20 pt-8">
             <h2 className="font-serif text-3xl font-semibold text-[#17130d]">
-              Conclusión
+              Qué puedes llevarte de «{article.title}»
             </h2>
             <div className="mt-4 space-y-5 text-lg leading-9 text-[#2d281f]">
               {article.conclusion.map((paragraph) => (
@@ -261,6 +288,8 @@ export default async function BlogArticlePage({
               ))}
             </div>
           </section>
+
+          <EditorialAuthor publishedAt={article.publishedAt} updatedAt="2026-08-14" />
         </div>
       </article>
 

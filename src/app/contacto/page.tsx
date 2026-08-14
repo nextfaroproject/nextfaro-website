@@ -4,9 +4,10 @@ import { LegalPageHeader } from "@/components/legal-page-header";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Contacto | NextFaro Audiolibros",
+  title: "Contacto",
   description:
     "Contacta con NextFaro Audiolibros para consultas, sugerencias, colaboraciones o información editorial.",
+  alternates: { canonical: "/contacto" },
 };
 
 const contactReasons = [

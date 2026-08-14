@@ -9,10 +9,11 @@ export const metadata: Metadata = {
   title: "Sobre NextFaro Audiolibros",
   description:
     "Conoce la misión de NextFaro Audiolibros y el enfoque detrás de sus recomendaciones de libros, audiolibros y aprendizaje continuo.",
+  alternates: { canonical: "/sobre-nosotros" },
 };
 
 const navLinks = [
-  { href: "/#catalogo", label: "Catálogo" },
+  { href: "/catalogo", label: "Catálogo" },
   { href: "/blog", label: "Blog" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
 ];
@@ -20,7 +21,7 @@ const navLinks = [
 const sections = [
   {
     title: "Quién está detrás del proyecto",
-    text: "NextFaro es impulsado por una persona interesada en la lectura, los audiolibros y el aprendizaje continuo. No buscamos convertir el sitio en una tienda de enlaces, sino en un espacio editorial donde cada recomendación tenga contexto y propósito.",
+    text: "NextFaro es un proyecto editorial independiente impulsado por su equipo editorial. No atribuimos los textos a especialistas inexistentes ni presentamos experiencia personal como autoridad profesional. Nuestro trabajo consiste en contextualizar obras, comparar ideas, señalar límites y ofrecer preguntas que ayuden a leer con criterio.",
   },
   {
     title: "Nuestra misión",

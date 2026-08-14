@@ -86,7 +86,7 @@ export const bookGuides: BookGuide[] = [
     readingTips: ["Lee pocas páginas y deja tiempo para observar la idea.", "Prueba prácticas breves sin forzarte a alcanzar un estado especial.", "Distingue entre reflexión espiritual y atención clínica de salud mental."],
     questions: ["¿Qué parte de tu experiencia pertenece al presente y cuál a una anticipación?", "¿Puedes notar un pensamiento sin seguirlo de inmediato?", "¿Qué decisión se vuelve más clara cuando reduces el ruido mental?"],
     editorialNote: "El libro ofrece una perspectiva espiritual, no un tratamiento médico o psicológico. Si existe sufrimiento persistente, ansiedad intensa o depresión, la lectura puede acompañar, pero no reemplazar, la atención de profesionales cualificados.",
-    relatedArticles: ["lectura-concentracion", "lectura-y-desarrollo-personal"],
+    relatedArticles: ["por-que-la-lectura-mejora-la-concentracion", "lectura-y-desarrollo-personal"],
   },
   {
     slug: "el-inversor-inteligente",
@@ -333,7 +333,7 @@ export const bookGuides: BookGuide[] = [
     readingTips: ["Observa cómo cambia el significado de las palabras.", "Distingue la advertencia literaria de una comparación política apresurada.", "Conecta la novela con preguntas sobre archivos, prensa y privacidad."],
     questions: ["¿Qué ocurre cuando una sociedad pierde referencias compartidas?", "¿Cómo protege el lenguaje preciso la capacidad de disentir?", "¿Qué instituciones ayudan a verificar la memoria pública?"],
     editorialNote: "1984 es una obra de ficción, no una plantilla exacta para etiquetar cualquier desacuerdo político. Su potencia está en ofrecer conceptos para examinar vigilancia, propaganda y verdad con mayor cuidado.",
-    relatedArticles: ["lectura-concentracion", "importancia-de-aprender-continuamente"],
+    relatedArticles: ["por-que-la-lectura-mejora-la-concentracion", "importancia-de-aprender-continuamente"],
   },
   {
     slug: "el-hombre-en-busca-de-sentido",

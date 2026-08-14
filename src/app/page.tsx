@@ -25,8 +25,8 @@ export default function Home() {
 
         <header className="relative z-10 mx-auto w-full max-w-7xl px-5 py-5 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between gap-4">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="flex min-w-0 items-center gap-3"
               aria-label="NextFaro inicio"
             >
@@ -41,7 +41,7 @@ export default function Home() {
               <span className="truncate text-sm font-semibold text-[#fff7e8] sm:text-base">
                 NextFaro Audiolibros
               </span>
-            </a>
+            </Link>
 
             <nav className="hidden items-center gap-7 text-sm text-[#fff7e8]/78 md:flex">
               <a className="transition hover:text-[#e9c46a]" href="#catalogo">
@@ -49,6 +49,9 @@ export default function Home() {
               </a>
               <Link className="transition hover:text-[#e9c46a]" href="/blog">
                 Blog
+              </Link>
+              <Link className="transition hover:text-[#e9c46a]" href="/audiolibros">
+                Audiolibros
               </Link>
               <Link
                 className="transition hover:text-[#e9c46a]"
@@ -74,7 +77,7 @@ export default function Home() {
             </a>
           </div>
 
-          <nav className="mt-4 flex items-center justify-between gap-2 rounded-md border border-[#fff7e8]/12 bg-[#070706]/42 p-1 text-xs font-semibold text-[#fff7e8]/82 backdrop-blur md:hidden">
+          <nav className="mt-4 grid grid-cols-2 gap-1 rounded-md border border-[#fff7e8]/12 bg-[#070706]/42 p-1 text-xs font-semibold text-[#fff7e8]/82 backdrop-blur sm:grid-cols-5 md:hidden">
             <a
               className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
               href="#catalogo"
@@ -86,6 +89,12 @@ export default function Home() {
               href="/blog"
             >
               Blog
+            </Link>
+            <Link
+              className="rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
+              href="/audiolibros"
+            >
+              Audiolibros
             </Link>
             <Link
               className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
@@ -298,7 +307,7 @@ export default function Home() {
                   </p>
 
                   <Link
-                    href={guide ? `/libros/${guide.slug}` : "#catalogo"}
+                    href={guide ? `/libros/${guide.slug}` : "/catalogo"}
                     className="mx-auto mt-3 rounded-full border border-[#d6b15f]/70 bg-[#d6b15f] px-4 py-2 text-center text-xs font-bold text-[#11100d] transition-all duration-300 hover:bg-transparent hover:text-[#f0d27a]"
                   >
                     Conocer el libro

@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://nextfaroaudiolibros.com";
+import { siteUrl } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {

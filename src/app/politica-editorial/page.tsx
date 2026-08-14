@@ -9,10 +9,11 @@ export const metadata: Metadata = {
   title: "Política editorial",
   description:
     "Conoce cómo NextFaro Audiolibros selecciona libros, redacta contenidos y maneja enlaces de afiliado con independencia editorial.",
+  alternates: { canonical: "/politica-editorial" },
 };
 
 const navLinks = [
-  { href: "/#catalogo", label: "Catálogo" },
+  { href: "/catalogo", label: "Catálogo" },
   { href: "/blog", label: "Blog" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
 ];

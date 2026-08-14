@@ -4,9 +4,10 @@ import { LegalPageHeader } from "@/components/legal-page-header";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Términos y condiciones | NextFaro Audiolibros",
+  title: "Términos y condiciones",
   description:
     "Condiciones de uso, enlaces externos, afiliados y limitación de responsabilidad de NextFaro Audiolibros.",
+  alternates: { canonical: "/terminos" },
 };
 
 const sections = [

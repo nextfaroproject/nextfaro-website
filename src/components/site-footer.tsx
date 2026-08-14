@@ -1,12 +1,16 @@
 import Link from "next/link";
+import { CookiePreferences } from "@/components/cookie-preferences";
 
 const legalLinks = [
+  { href: "/catalogo", label: "Catálogo" },
   { href: "/blog", label: "Blog" },
+  { href: "/audiolibros", label: "Audiolibros" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
   { href: "/politica-editorial", label: "Política editorial" },
   { href: "/contacto", label: "Contacto" },
   { href: "/privacidad", label: "Privacidad" },
   { href: "/terminos", label: "Términos" },
+  { href: "/divulgacion-afiliados", label: "Afiliados" },
 ];
 
 export function SiteFooter() {
@@ -26,6 +30,7 @@ export function SiteFooter() {
               {link.label}
             </Link>
           ))}
+          <CookiePreferences />
         </nav>
       </div>
     </footer>

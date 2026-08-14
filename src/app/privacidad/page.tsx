@@ -4,9 +4,10 @@ import { LegalPageHeader } from "@/components/legal-page-header";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Política de privacidad | NextFaro Audiolibros",
+  title: "Política de privacidad",
   description:
     "Información sobre privacidad, cookies, enlaces de afiliado y analítica en NextFaro Audiolibros.",
+  alternates: { canonical: "/privacidad" },
 };
 
 const sections = [
@@ -34,8 +35,8 @@ const sections = [
   {
     title: "Servicios externos de terceros",
     body: [
-      "El sitio puede integrar herramientas externas para medición técnica, rendimiento, seguridad o comprensión general del uso de la web.",
-      "Estas herramientas pueden utilizar cookies o tecnologías similares según sus propias condiciones y la configuración de privacidad del navegador, del dispositivo o de la cuenta del usuario.",
+      "El sitio integra Google Analytics cuando el visitante acepta las cookies de medición. Google puede recibir datos técnicos y de interacción de acuerdo con sus propias políticas. El consentimiento puede rechazarse desde el aviso mostrado en la web.",
+      "El sitio está preparado para una posible integración futura con Google AdSense. Los servicios publicitarios de terceros pueden usar cookies para seleccionar o medir contenido comercial, pero NextFaro no activa esa finalidad sin la configuración y el consentimiento que correspondan.",
     ],
   },
   {
@@ -76,7 +77,7 @@ export default function PrivacidadPage() {
 
           <div className="mt-8 rounded-lg border border-[#e9c46a]/16 bg-[#fff7e8]/[0.025] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] sm:p-8">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#d6b15f]">
-              Última actualización: 18 de junio de 2026
+              Última actualización: 14 de agosto de 2026
             </p>
             <h1 className="font-serif text-4xl font-semibold text-[#fff7e8]">
               Política de privacidad
@@ -99,6 +100,29 @@ export default function PrivacidadPage() {
                   </div>
                 </section>
               ))}
+
+              <section>
+                <h2 className="font-serif text-2xl font-semibold text-[#fff7e8]">
+                  Google, publicidad y personalización
+                </h2>
+                <div className="mt-3 space-y-4 text-base leading-7 text-[#fff7e8]/72">
+                  <p>
+                    Si el sitio activa Google AdSense después de obtener la aprobación correspondiente, Google podrá actuar como proveedor externo de anuncios. Google y sus socios pueden utilizar cookies, incluida la cookie DoubleClick, para publicar y medir anuncios, limitar su frecuencia y, cuando exista consentimiento, personalizarlos según visitas anteriores a este u otros sitios.
+                  </p>
+                  <p>
+                    Puedes conocer cómo utiliza Google los datos procedentes de sitios asociados en su{" "}
+                    <a href="https://policies.google.com/technologies/partner-sites?hl=es" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#e9c46a] underline underline-offset-4">
+                      política para sitios y aplicaciones de terceros
+                    </a>. También puedes gestionar la personalización desde{" "}
+                    <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#e9c46a] underline underline-offset-4">
+                      Mi centro de anuncios de Google
+                    </a> y borrar o bloquear cookies desde tu navegador.
+                  </p>
+                  <p>
+                    Rechazar las cookies de medición en NextFaro no impide leer el catálogo, las guías ni los artículos. Si en el futuro se habilitan anuncios, el tratamiento dependerá de la región, el consentimiento y la configuración aplicable en ese momento.
+                  </p>
+                </div>
+              </section>
             </div>
           </div>
         </article>
