@@ -22,7 +22,7 @@ export function CatalogExplorer({ books }: { books: CatalogBook[] }) {
 
   return (
     <>
-      <div className="mt-8 grid gap-3 rounded-lg border border-[#b88a2d]/20 bg-[#fffaf1] p-4 sm:grid-cols-[1fr_220px]">
+      <div className="mt-8 grid gap-4 border-y border-[#b88a2d]/20 py-6 sm:grid-cols-[1fr_220px]">
         <label className="text-sm font-semibold text-[#4b4030]">
           Buscar por título o autor
           <input
@@ -49,17 +49,17 @@ export function CatalogExplorer({ books }: { books: CatalogBook[] }) {
         {filtered.length} {filtered.length === 1 ? "libro encontrado" : "libros encontrados"}
       </p>
 
-      <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="mt-5 grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filtered.map((book) => (
-          <article key={`${book.title}-${book.author}`} className="group flex flex-col rounded-lg border border-[#b88a2d]/18 bg-[#fffaf1] p-3 transition duration-300 hover:-translate-y-1 hover:border-[#b88a2d]/55 hover:shadow-xl">
-            <div className="relative mx-auto aspect-[2/3] w-32 overflow-hidden rounded-lg border border-[#b88a2d]/24 bg-[#17130d] shadow-lg">
-              <Image src={book.image} alt={`Cubierta editorial de ${book.title}, de ${book.author}`} fill sizes="128px" className="object-cover" />
+          <article key={`${book.title}-${book.author}`} className="group flex flex-col border-t border-[#b88a2d]/26 px-2 pt-4 transition-colors duration-300 hover:border-[#8a5d12]">
+            <div className="relative mx-auto aspect-[2/3] w-36 overflow-hidden rounded-md border border-[#b88a2d]/24 bg-[#17130d] shadow-[0_16px_34px_rgba(55,39,18,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
+              <Image src={book.image} alt={`Cubierta editorial de ${book.title}, de ${book.author}`} fill sizes="144px" className="object-cover" />
             </div>
             <p className="mt-3 text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#9a6a12]">{book.category}</p>
             <h2 className="mt-1 text-center font-serif text-xl font-semibold leading-tight">{book.title}</h2>
             <p className="mt-1 text-center text-sm text-[#6b5d49]">{book.author}</p>
             <p className="mt-3 line-clamp-3 flex-1 text-center text-sm leading-6 text-[#514636]">{book.description}</p>
-            <Link href={book.slug ? `/libros/${book.slug}` : "/catalogo"} className="mx-auto mt-4 rounded-md bg-[#17130d] px-4 py-2 text-sm font-semibold text-[#fff7e8] transition hover:bg-[#8a5d12]">
+            <Link href={book.slug ? `/libros/${book.slug}` : "/catalogo"} className="mx-auto mt-4 border-b border-[#8a5d12]/55 pb-1 text-xs font-bold uppercase tracking-[0.1em] text-[#68460c] transition-colors hover:border-[#17130d] hover:text-[#17130d]">
               Leer la guía
             </Link>
           </article>

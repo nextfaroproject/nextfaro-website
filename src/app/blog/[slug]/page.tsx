@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { EditorialAuthor } from "@/components/editorial-author";
 import { JsonLd } from "@/components/json-ld";
+import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import {
   blogArticleApplications,
@@ -14,8 +15,6 @@ import {
 } from "@/data/blog";
 import { getBookGuideByTitle } from "@/data/book-guides";
 import { absoluteUrl, editorialAuthor, siteName } from "@/lib/site";
-
-const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
 
 type BlogArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -95,53 +94,7 @@ export default async function BlogArticlePage({
   return (
     <main className="min-h-screen bg-[#f6efe2] text-[#17130d]">
       <JsonLd data={jsonLd} />
-      <header className="border-b border-[#b88a2d]/18 bg-[#fffaf1]/95 px-5 py-5 sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-5xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <Link
-            href="/"
-            className="flex min-w-0 items-center gap-3"
-            aria-label="Volver a NextFaro Audiolibros"
-          >
-            <Image
-              src="/images/nextfaro-logo-transparent.png"
-              alt="NextFaro Audiolibros"
-              width={42}
-              height={42}
-              priority
-              className="h-10 w-10 shrink-0 object-contain"
-            />
-            <span className="truncate text-sm font-semibold text-[#17130d] sm:text-base">
-              NextFaro Audiolibros
-            </span>
-          </Link>
-
-          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#4b4030]">
-            <Link className="transition hover:text-[#a77518]" href="/catalogo">
-              Catálogo
-            </Link>
-            <Link className="transition hover:text-[#a77518]" href="/blog">
-              Blog
-            </Link>
-            <Link
-              className="transition hover:text-[#a77518]"
-              href="/sobre-nosotros"
-            >
-              Sobre nosotros
-            </Link>
-            <Link className="transition hover:text-[#a77518]" href="/audiolibros">
-              Audiolibros
-            </Link>
-            <a
-              className="transition hover:text-[#a77518]"
-              href={youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              YouTube
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader maxWidth="5xl" />
 
       <article className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
         <div className="mx-auto max-w-3xl">

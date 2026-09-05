@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { BlogExplorer } from "@/components/blog-explorer";
+import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { blogArticles } from "@/data/blog";
-
-const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
 
 export const metadata: Metadata = {
   title: "Blog de lectura, libros y aprendizaje",
@@ -17,53 +14,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <main className="min-h-screen bg-[#f6efe2] text-[#17130d]">
-      <header className="border-b border-[#b88a2d]/18 bg-[#fffaf1]/95 px-5 py-5 sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <Link
-            href="/"
-            className="flex min-w-0 items-center gap-3"
-            aria-label="Volver a NextFaro Audiolibros"
-          >
-            <Image
-              src="/images/nextfaro-logo-transparent.png"
-              alt="NextFaro Audiolibros"
-              width={42}
-              height={42}
-              priority
-              className="h-10 w-10 shrink-0 object-contain"
-            />
-            <span className="truncate text-sm font-semibold text-[#17130d] sm:text-base">
-              NextFaro Audiolibros
-            </span>
-          </Link>
-
-          <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#4b4030]">
-            <Link className="transition hover:text-[#a77518]" href="/catalogo">
-              Catálogo
-            </Link>
-            <Link className="font-semibold text-[#9a6a12]" href="/blog">
-              Blog
-            </Link>
-            <Link
-              className="transition hover:text-[#a77518]"
-              href="/sobre-nosotros"
-            >
-              Sobre nosotros
-            </Link>
-            <Link className="transition hover:text-[#a77518]" href="/audiolibros">
-              Audiolibros
-            </Link>
-            <a
-              className="transition hover:text-[#a77518]"
-              href={youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              YouTube
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="border-b border-[#b88a2d]/18 bg-[#fffaf1] px-5 py-12 sm:px-8 sm:py-14 lg:px-10">
         <div className="mx-auto max-w-7xl">
@@ -80,8 +31,8 @@ export default function BlogPage() {
             consejos prácticos y reflexión editorial.
           </p>
 
-          <div className="mt-7 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg border border-[#b88a2d]/18 bg-[#f7ecd9] p-4">
+          <div className="mt-8 grid gap-6 border-y border-[#b88a2d]/20 py-6 sm:grid-cols-3 sm:divide-x sm:divide-[#b88a2d]/18">
+            <div className="sm:pr-6">
               <h2 className="font-serif text-lg font-semibold">
                 Lectura práctica
               </h2>
@@ -90,7 +41,7 @@ export default function BlogPage() {
                 usar cada libro como herramienta de aprendizaje.
               </p>
             </div>
-            <div className="rounded-lg border border-[#b88a2d]/18 bg-[#f7ecd9] p-4">
+            <div className="sm:px-6">
               <h2 className="font-serif text-lg font-semibold">
                 Recomendaciones con criterio
               </h2>
@@ -99,7 +50,7 @@ export default function BlogPage() {
                 comunicación, filosofía, emprendimiento o propósito.
               </p>
             </div>
-            <div className="rounded-lg border border-[#b88a2d]/18 bg-[#f7ecd9] p-4">
+            <div className="sm:pl-6">
               <h2 className="font-serif text-lg font-semibold">
                 Aprendizaje continuo
               </h2>

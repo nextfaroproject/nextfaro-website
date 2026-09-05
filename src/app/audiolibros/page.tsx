@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ const platforms = [
 export default function AudiobooksPage() {
   return (
     <main className="min-h-screen bg-[#f6efe2] text-[#17130d]">
+      <SiteHeader maxWidth="6xl" />
       <article className="px-5 py-10 sm:px-8 sm:py-14 lg:px-10"><div className="mx-auto max-w-4xl">
         <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Audiolibros", href: "/audiolibros" }]} />
         <p className="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-[#9a6a12]">Escuchar con criterio</p>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBookGuideByTitle } from "@/data/book-guides";
 import { books } from "@/data/books";
+import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
 const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
@@ -23,95 +24,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-linear-to-r from-[#070706]/94 via-[#070706]/60 to-[#070706]/8" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-[#070706] to-transparent" />
 
-        <header className="relative z-10 mx-auto w-full max-w-7xl px-5 py-5 sm:px-8 lg:px-10">
-          <div className="flex items-center justify-between gap-4">
-            <Link
-              href="/"
-              className="flex min-w-0 items-center gap-3"
-              aria-label="NextFaro inicio"
-            >
-              <Image
-                src="/images/nextfaro-logo-transparent.png"
-                alt="NextFaro Audiolibros"
-                width={42}
-                height={42}
-                priority
-                className="h-10 w-10 shrink-0 object-contain"
-              />
-              <span className="truncate text-sm font-semibold text-[#fff7e8] sm:text-base">
-                NextFaro Audiolibros
-              </span>
-            </Link>
-
-            <nav className="hidden items-center gap-7 text-sm text-[#fff7e8]/78 md:flex">
-              <a className="transition hover:text-[#e9c46a]" href="#catalogo">
-                Catálogo
-              </a>
-              <Link className="transition hover:text-[#e9c46a]" href="/blog">
-                Blog
-              </Link>
-              <Link className="transition hover:text-[#e9c46a]" href="/audiolibros">
-                Audiolibros
-              </Link>
-              <Link
-                className="transition hover:text-[#e9c46a]"
-                href="/sobre-nosotros"
-              >
-                Sobre nosotros
-              </Link>
-              <a
-                className="transition hover:text-[#e9c46a]"
-                href={youtubeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                YouTube
-              </a>
-            </nav>
-
-            <a
-              href="#catalogo"
-              className="shrink-0 rounded-md border border-[#e9c46a]/70 px-4 py-2 text-sm font-semibold text-[#fff7e8] transition hover:border-[#fff7e8] hover:bg-[#fff7e8] hover:text-[#080807]"
-            >
-              Ver libros
-            </a>
-          </div>
-
-          <nav className="mt-4 grid grid-cols-2 gap-1 rounded-md border border-[#fff7e8]/12 bg-[#070706]/42 p-1 text-xs font-semibold text-[#fff7e8]/82 backdrop-blur sm:grid-cols-5 md:hidden">
-            <a
-              className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
-              href="#catalogo"
-            >
-              Catálogo
-            </a>
-            <Link
-              className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
-              href="/blog"
-            >
-              Blog
-            </Link>
-            <Link
-              className="rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
-              href="/audiolibros"
-            >
-              Audiolibros
-            </Link>
-            <Link
-              className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
-              href="/sobre-nosotros"
-            >
-              Sobre nosotros
-            </Link>
-            <a
-              className="flex-1 rounded px-3 py-3 text-center transition hover:bg-[#fff7e8]/10"
-              href={youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              YouTube
-            </a>
-          </nav>
-        </header>
+        <SiteHeader theme="dark" overlay showCatalogCta />
 
         <div className="relative z-10 mx-auto flex min-h-[430px] w-full max-w-7xl items-start px-5 pb-16 pt-10 sm:min-h-[420px] sm:px-8 sm:pt-14 lg:min-h-[460px] lg:px-10 lg:pt-16">
           <div className="max-w-xl">
@@ -150,7 +63,7 @@ export default function Home() {
         id="metodo"
         className="bg-[#fff7e8] px-5 py-12 text-[#11100d] sm:px-8 sm:py-14 lg:px-10"
       >
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.35fr] lg:items-start">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.35fr] lg:items-start lg:gap-14">
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#9a6a12]">
               Proyecto editorial
@@ -178,7 +91,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
             {[
               {
                 title: "Cómo elegimos los libros",
@@ -199,7 +112,7 @@ export default function Home() {
             ].map((item) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#b88a2d]/18 bg-white/55 p-5 shadow-[0_14px_34px_rgba(55,39,18,0.07)]"
+                className="border-t border-[#b88a2d]/30 pt-4"
               >
                 <h3 className="font-serif text-xl font-semibold text-[#17130d]">
                   {item.title}
@@ -245,7 +158,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <aside className="rounded-lg border border-[#b88a2d]/20 bg-[#efe0c3]/70 p-5">
+              <aside className="border-l-2 border-[#b88a2d]/45 bg-[#efe0c3]/55 px-5 py-4">
                 <h3 className="font-serif text-xl font-semibold">Una lectura más activa</h3>
                 <ol className="mt-4 space-y-4 text-sm leading-6 text-[#544631]">
                   <li><strong className="text-[#80550c]">1. Pregunta:</strong> define qué deseas comprender antes de empezar.</li>
@@ -322,8 +235,8 @@ export default function Home() {
             ellos, puedo recibir una comisión sin costo adicional para ti.
           </p>
 
-          <div className="mt-8 grid gap-4 rounded-lg border border-[#e9c46a]/14 bg-[#fff7e8]/[0.035] p-5 sm:grid-cols-3">
-            <div>
+          <div className="mt-8 grid gap-6 border-y border-[#e9c46a]/14 py-6 sm:grid-cols-3 sm:divide-x sm:divide-[#e9c46a]/14">
+            <div className="sm:pr-6">
               <h3 className="font-serif text-xl text-[#fff7e8]">
                 Para empezar
               </h3>
@@ -332,7 +245,7 @@ export default function Home() {
                 concentración antes de saltar a lecturas más densas.
               </p>
             </div>
-            <div>
+            <div className="sm:px-6">
               <h3 className="font-serif text-xl text-[#fff7e8]">
                 Para pensar mejor
               </h3>
@@ -341,7 +254,7 @@ export default function Home() {
                 ayudan a ampliar perspectiva y criterio personal.
               </p>
             </div>
-            <div>
+            <div className="sm:pl-6">
               <h3 className="font-serif text-xl text-[#fff7e8]">
                 Para aplicar
               </h3>

@@ -1,9 +1,7 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 
+import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-
-const youtubeUrl = "https://www.youtube.com/channel/UCYBIcqF0suvhuw0UZEbhLow";
 
 export const metadata: Metadata = {
   title: "Política editorial",
@@ -11,12 +9,6 @@ export const metadata: Metadata = {
     "Conoce cómo NextFaro Audiolibros selecciona libros, redacta contenidos y maneja enlaces de afiliado con independencia editorial.",
   alternates: { canonical: "/politica-editorial" },
 };
-
-const navLinks = [
-  { href: "/catalogo", label: "Catálogo" },
-  { href: "/blog", label: "Blog" },
-  { href: "/sobre-nosotros", label: "Sobre nosotros" },
-];
 
 const sections = [
   {
@@ -60,36 +52,7 @@ const sections = [
 export default function EditorialPolicyPage() {
   return (
     <main className="min-h-screen bg-[#f7f0e4] text-[#17130d]">
-      <header className="border-b border-[#b88a2d]/20 bg-[#fffaf1]/95">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <Link
-            href="/"
-            className="font-serif text-xl font-semibold tracking-wide text-[#17130d]"
-          >
-            NextFaro Audiolibros
-          </Link>
-
-          <nav className="flex flex-wrap gap-4 text-sm font-medium text-[#4f4535]">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="transition-colors hover:text-[#a77a22]"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              className="transition-colors hover:text-[#a77a22]"
-              href={youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              YouTube
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader maxWidth="6xl" />
 
       <section className="mx-auto w-full max-w-4xl px-6 py-14 sm:py-18">
         <div className="mb-8">
@@ -101,7 +64,7 @@ export default function EditorialPolicyPage() {
           </h1>
         </div>
 
-        <article className="rounded-lg border border-[#b88a2d]/20 bg-[#fffaf1] p-6 shadow-[0_18px_45px_rgba(45,32,12,0.08)] sm:p-9">
+        <article className="border-t border-[#b88a2d]/25 pt-8">
           <p className="text-base leading-8 text-[#40382d] sm:text-lg">
             En NextFaro Audiolibros queremos ofrecer recomendaciones y artículos
             que aporten valor real al lector. Esta política editorial explica

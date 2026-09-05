@@ -34,7 +34,7 @@ export function BlogExplorer({ articles }: { articles: BlogArticle[] }) {
 
   return (
     <div>
-      <div className="mb-8 grid gap-4 border-b border-[#b88a2d]/20 pb-7 md:grid-cols-[1fr_auto] md:items-end">
+      <div className="mb-8 grid gap-4 border-y border-[#b88a2d]/20 py-6 md:grid-cols-[1fr_auto] md:items-end">
         <label className="block">
           <span className="mb-2 block text-sm font-semibold text-[#4d402e]">Buscar una guía</span>
           <input
@@ -55,17 +55,17 @@ export function BlogExplorer({ articles }: { articles: BlogArticle[] }) {
 
       <p className="mb-5 text-sm text-[#675944]" aria-live="polite">{filtered.length} {filtered.length === 1 ? "artículo encontrado" : "artículos encontrados"}</p>
       {visible.length ? (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((article) => (
-            <article key={article.slug} className="group flex h-full flex-col overflow-hidden rounded-lg border border-[#c9a95b]/24 bg-[#fffaf1] shadow-[0_14px_36px_rgba(55,39,18,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[#b88a2d]/48 hover:shadow-[0_20px_50px_rgba(55,39,18,0.14)]">
-              <Link href={`/blog/${article.slug}`} className="relative block aspect-[16/10] overflow-hidden bg-[#e9dcc6]" aria-label={`Leer artículo: ${article.title}`}>
-                <Image src={article.image} alt="" fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+            <article key={article.slug} className="group flex h-full flex-col border-t border-[#b88a2d]/26 pt-3">
+              <Link href={`/blog/${article.slug}`} className="relative block aspect-[16/10] overflow-hidden rounded-md bg-[#e9dcc6]" aria-label={`Leer artículo: ${article.title}`}>
+                <Image src={article.image} alt={`Imagen del artículo ${article.title}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
               </Link>
-              <div className="flex flex-1 flex-col p-5">
+              <div className="flex flex-1 flex-col pt-4">
                 <div className="flex items-center justify-between gap-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9a6a12]"><span>{article.category}</span><span>{article.readingTime}</span></div>
                 <h2 className="mt-3 font-serif text-xl leading-tight text-[#17130d]">{article.title}</h2>
                 <p className="mt-3 line-clamp-3 flex-1 text-sm leading-6 text-[#5b5142]">{article.description}</p>
-                <Link href={`/blog/${article.slug}`} className="mt-5 w-fit rounded-full border border-[#b88a2d]/70 bg-[#b88a2d] px-4 py-2 text-xs font-bold text-[#fffaf1] transition-all duration-300 hover:bg-transparent hover:text-[#8a5d12]">Leer artículo</Link>
+                <Link href={`/blog/${article.slug}`} className="mt-5 w-fit border-b border-[#b88a2d]/55 pb-1 text-xs font-bold uppercase tracking-[0.1em] text-[#76500e] transition-colors hover:border-[#17130d] hover:text-[#17130d]">Leer artículo</Link>
               </div>
             </article>
           ))}

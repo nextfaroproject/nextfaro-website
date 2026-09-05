@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogExplorer } from "@/components/catalog-explorer";
+import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { bookCategories } from "@/data/categories";
 import { books } from "@/data/books";
 import { bookGuides } from "@/data/book-guides";
-import { youtubeUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Catálogo editorial de libros",
@@ -24,12 +23,7 @@ export default function CatalogPage() {
 
   return (
     <main className="min-h-screen bg-[#f6efe2] text-[#17130d]">
-      <header className="border-b border-[#b88a2d]/18 bg-[#fffaf1] px-5 py-5 sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <Link href="/" className="flex items-center gap-3"><Image src="/images/nextfaro-logo-transparent.png" alt="NextFaro Audiolibros" width={42} height={42} className="h-10 w-10 object-contain" /><span className="font-semibold">NextFaro Audiolibros</span></Link>
-          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#4b4030]"><Link className="font-semibold text-[#8a5d12]" href="/catalogo">Catálogo</Link><Link href="/blog">Blog</Link><Link href="/audiolibros">Audiolibros</Link><Link href="/sobre-nosotros">Sobre nosotros</Link><a href={youtubeUrl} target="_blank" rel="noopener noreferrer">YouTube</a></nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="px-5 py-10 sm:px-8 sm:py-14 lg:px-10">
         <div className="mx-auto max-w-7xl">
